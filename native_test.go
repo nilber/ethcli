@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/ethclient"
-	ethcli "github.com/medeirosfalante/ethcli"
 	hdwallet "github.com/miguelmota/go-ethereum-hdwallet"
+	ethcli "github.com/nilber/ethcli"
 
 	"github.com/joho/godotenv"
 )
@@ -22,14 +22,12 @@ func TestSendNative(t *testing.T) {
 			return
 		}
 
-
 		native := ethcli.NewNative(client)
 
 		config := &ethcli.TransferOpts{Mnemonic: os.Getenv("MNEMONIC"),
-			Path: "0",
+			Path:    "0",
 			Address: "0x9A034fbc67b2851e9E28F4bb45FD6655E9F9dAeE",
-			Amount: 0.005}
-
+			Amount:  0.005}
 
 		tx, err := native.Transfer(config)
 		if err != nil {
@@ -42,7 +40,6 @@ func TestSendNative(t *testing.T) {
 		}
 	})
 
-
 	t.Run("BSC Native", func(t *testing.T) {
 		client, err := ethclient.Dial("https://data-seed-prebsc-1-s1.binance.org:8545/")
 		if err != nil {
@@ -52,12 +49,10 @@ func TestSendNative(t *testing.T) {
 
 		native := ethcli.NewNative(client)
 
-
 		config := &ethcli.TransferOpts{Mnemonic: os.Getenv("MNEMONIC"),
-			Path: "0",
+			Path:    "0",
 			Address: "0x9A034fbc67b2851e9E28F4bb45FD6655E9F9dAeE",
-			Amount: 0.1}
-
+			Amount:  0.1}
 
 		tx, err := native.Transfer(config)
 		if err != nil {
@@ -86,12 +81,10 @@ func TestBalanceNative(t *testing.T) {
 		return
 	}
 
-
 	if balance == nil {
 		t.Error("balance is nil")
 		return
 	}
-
 
 }
 

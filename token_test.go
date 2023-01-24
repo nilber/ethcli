@@ -5,11 +5,10 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/ethclient"
-	ethcli "github.com/medeirosfalante/ethcli"
+	ethcli "github.com/nilber/ethcli"
 
 	"github.com/joho/godotenv"
 )
-
 
 func TestSendTokenErc20(t *testing.T) {
 	godotenv.Load()
@@ -21,12 +20,11 @@ func TestSendTokenErc20(t *testing.T) {
 			return
 		}
 
-
 		token := ethcli.NewTokenErc20("0x2d7882bedcbfddce29ba99965dd3cdf7fcb10a1e", client)
 		config := &ethcli.TransferOpts{Mnemonic: os.Getenv("MNEMONIC"),
-			Path: "0",
+			Path:    "0",
 			Address: "0x9A034fbc67b2851e9E28F4bb45FD6655E9F9dAeE",
-			Amount: 0.05}
+			Amount:  0.05}
 
 		tx, err := token.Transfer(config)
 		if err != nil {
@@ -47,9 +45,9 @@ func TestSendTokenErc20(t *testing.T) {
 
 		token := ethcli.NewTokenErc20("0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee", client)
 		config := &ethcli.TransferOpts{Mnemonic: os.Getenv("MNEMONIC"),
-			Path: "0",
+			Path:    "0",
 			Address: "0x9A034fbc67b2851e9E28F4bb45FD6655E9F9dAeE",
-			Amount: 1}
+			Amount:  1}
 
 		tx, err := token.Transfer(config)
 		if err != nil {
@@ -127,4 +125,3 @@ func TestBalanceTokenErc20(t *testing.T) {
 	})
 
 }
-

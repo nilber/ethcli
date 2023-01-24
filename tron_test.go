@@ -1,11 +1,12 @@
 package ethcli_test
 
 import (
-	"github.com/medeirosfalante/ethcli/tron"
-	"github.com/stretchr/testify/assert"
-	"google.golang.org/grpc"
 	"math/big"
 	"testing"
+
+	"github.com/nilber/ethcli/tron"
+	"github.com/stretchr/testify/assert"
+	"google.golang.org/grpc"
 )
 
 const (

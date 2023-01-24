@@ -13,7 +13,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/medeirosfalante/ethcli/abi"
+	"github.com/nilber/ethcli/abi"
 )
 
 type Block struct {

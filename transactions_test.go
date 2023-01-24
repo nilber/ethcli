@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/ethclient"
-	ethcli "github.com/medeirosfalante/ethcli"
+	ethcli "github.com/nilber/ethcli"
 )
 
 func TestGetByBlock(t *testing.T) {
